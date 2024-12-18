@@ -20,7 +20,7 @@ app.use((request, response, next) => {
   next();
 });
 
-// Función para manejar errores
+// Manejo de errores
 const handleErrors = (fn) => async (request, response, nextfn) => {
   try {
     await fn(request, response, nextfn);
@@ -110,7 +110,7 @@ const obtenerJoyasPorFiltros = async ({
   return rows;
 };
 
-// Ruta GET /joyas/filtros
+// GET /joyas/filtros
 app.get(
   "/joyas/filtros",
   handleErrors(async (req, res) => {
